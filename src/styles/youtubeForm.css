@@ -1,0 +1,35 @@
+.youtube-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: row; */
+  width: 100vw;
+  height: 100vh;
+}
+.youtube-form {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+}
+.yt-btn {
+  margin-top: 20px;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 5px 10px;
+}
+
+.yt-input {
+}
+
+.yt-label {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.errors-content {
+  color: red;
+}
