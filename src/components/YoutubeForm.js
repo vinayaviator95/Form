@@ -7,6 +7,7 @@ const initialValues = {
   name: "",
   email: "",
   channel: "",
+  comments: "",
 };
 
 const validationSchema = Yup.object({
@@ -15,6 +16,7 @@ const validationSchema = Yup.object({
     .email("Invaled email format")
     .required("This field is required"),
   channel: Yup.string().required("This field is required"),
+  comments: Yup.string().required("This field is required"),
 });
 
 const onSubmit = (value) => {
@@ -22,13 +24,6 @@ const onSubmit = (value) => {
 };
 
 const YoutubeForm = () => {
-  // const formik = useFormik({
-  //   initialValues,
-  //   onSubmit,
-  //   // validate,
-  //   validationSchema,
-  // });
-  // console.log(formik.touched, "Form touched");
   return (
     <Formik
       className="youtube-wrap"
@@ -40,18 +35,7 @@ const YoutubeForm = () => {
         <label className="yt-label" htmlFor="name">
           Name
         </label>
-        <Field
-          className="yt-input"
-          type="text"
-          id="name"
-          name="name"
-          // onChange={formik.handleChange}
-          // value={formik.values.name}
-          // onBlur={formik.handleBlur}
-        />
-        {/* {formik.touched.name && formik.errors.name && (
-          <div className="errors-content">{formik.errors.name}</div>
-        )} */}
+        <Field className="yt-input" type="text" id="name" name="name" />
         <div className="errors-content">
           <ErrorMessage name="name" />
         </div>
@@ -70,7 +54,7 @@ const YoutubeForm = () => {
         <div className="errors-content">
           <ErrorMessage name="channel" />
         </div>
-
+        <Field as="textarea" name="comments" id="comments" />
         <button type="submit" className="yt-btn" onClick={() => {}}>
           Submit
         </button>
