@@ -9,6 +9,10 @@ const initialValues = {
   email: "",
   channel: "",
   comments: "",
+  address: {
+    facebook: "",
+    instagram: "",
+  },
 };
 
 const validationSchema = Yup.object({
@@ -64,6 +68,12 @@ const YoutubeForm = () => {
             return <div className="errors-content">{errorMsg}</div>;
           }}
         </ErrorMessage>
+        <div>
+          <label htmlFor="facbook">Facebook</label>
+          <Field type="text" id="facbook" name="address.facebook" />
+          <label htmlFor="instagram">Instagram</label>
+          <Field type="text" id="instagram" name="address.instagram" />
+        </div>
 
         <Field as="textarea" name="comments" id="comments" />
         <button type="submit" className="yt-btn" onClick={() => {}}>
