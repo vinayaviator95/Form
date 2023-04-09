@@ -13,6 +13,7 @@ const initialValues = {
     facebook: "",
     instagram: "",
   },
+  phoneNumber: ["", ""],
 };
 
 const validationSchema = Yup.object({
@@ -73,6 +74,12 @@ const YoutubeForm = () => {
           <Field type="text" id="facbook" name="address.facebook" />
           <label htmlFor="instagram">Instagram</label>
           <Field type="text" id="instagram" name="address.instagram" />
+        </div>
+        <div>
+          <label htmlFor="PrimaryNum">Primary Number</label>
+          <Field type="text" id="PrimaryNum" name="phoneNumber[0]" />
+          <label htmlFor="SecondryNum">Secondry Number</label>
+          <Field type="text" id="SecondryNum" name="phoneNumber[1]" />
         </div>
 
         <Field as="textarea" name="comments" id="comments" />
